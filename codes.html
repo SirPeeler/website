@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facilities and Services | Hotel</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Facilities Section */
+        /*.facilities-section {
+            background-image: url('facilities-background.jpg');
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            padding: 50px;
+            color: white;
+            text-align: center;
+        }
+
+        .facilities-section h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .facilities-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px #000;
+        }*/
+
+        /* Services Grid */
+        .services-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 50px;
+            background-color: #f4f4f4;
+        }
+
+        .service {
+            background-color: white;
+            width: 30%;
+            margin: 20px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .service img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .service h2 {
+            margin: 20px 0;
+            font-size: 1.8em;
+        }
+
+        .service p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 1024px) {
+            .service {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .service {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Accommodation</a>
+        <a href="services.html">Facilities and Services</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
+
+    <!-- Facilities Section -->
+    <div class="facilities-section">
+        <h1>Our Facilities & Services</h1>
+        <p>At [Hotel Name], we pride ourselves on offering top-of-the-line services and world-class facilities to enhance your stay. From relaxation to adventure, we have something for everyone.</p>
+    </div>
+
+    <!-- Services Grid -->
+    <div class="services-grid">
+        <div class="service">
+            <img src="IMG-20240924-WA0057.jpg" alt="Restaurant">
+            <h2>Gourmet Restaurant</h2>
+            <p>Enjoy fine dining at our in-house restaurant, offering a variety of international and local cuisines prepared by top chefs.</p>
+        </div>
+
+        <div class="service">
+            <img src="spa.jpg" alt="Spa">
+            <h2>Luxury Spa</h2>
+            <p>Relax and rejuvenate in our luxury spa, where you can enjoy massages, facials, and other therapeutic treatments.</p>
+        </div>
+
+        <div class="service">
+            <img src="pool.jpg" alt="Swimming Pool">
+            <h2>Infinity Pool</h2>
+            <p>Take a dip in our outdoor infinity pool, offering breathtaking views and poolside service for a perfect day of relaxation.</p>
+        </div>
+
+        <div class="service">
+            <img src="gym.jpg" alt="Gym">
+            <h2>Fitness Center</h2>
+            <p>Stay active during your stay with access to our fully-equipped fitness center, open 24/7 for your convenience.</p>
+        </div>
+
+        <div class="service">
+            <img src="tub.jpg" alt="Hot Tub">
+            <h2>Hot Tub</h2>
+            <p>Our state-of-the-art conference room is perfect for business meetings and events, equipped with modern technology and support services.</p>
+        </div>
+
+        <div class="service">
+            <img src="kids.jpg" alt="Kids Play Area">
+            <h2>Kids Play Area</h2>
+            <p>For families traveling with children, we offer a dedicated kids' play area where they can have fun under supervision.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Priemier and Luxury Suites. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Hotel</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background-image: url('pool1.jpg');
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            position: relative;
+        }
+
+        /* Hero Text */
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+        }
+
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Accomodation </a>
+        <a href="services.html">Facilities and Services</a>
+        <a href="contact.html">Contact us</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Welcome to Premier Suites Lodges</h1>
+            <p>Experience the finest comfort and hospitality</p>
+            <a href="rooms.html" class="btn">Explore Our Rooms</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Priemier Suites Lodges. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

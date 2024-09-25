@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Premier Suites Lodges</title>
+    <style>
+        /* Global Styles */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+        }
+
+        /* Header with Logo and Navigation Bar */
+        .header {
+            background-color: #4A90E2;
+            padding: 20px 50px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Logo */
+        .logo img {
+            height: 50px;
+        }
+
+        /* Navigation Bar */
+        nav a {
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 30px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: #4A90E2;
+            border-radius: 4px;
+            transition: background 0.3s ease;
+        }
+
+        /* Hero Section with Background Image */
+        .hero {
+            background-image: url('pool1.jpg'); /* Replace with your actual image URL */
+            height: 100vh;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* Hero Overlay */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        /* Hero Text */
+        .hero h1, .hero p {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        /* Button Styling */
+        .btn {
+            background-color: #ff6600;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 1.2em;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .btn:hover {
+            background-color: #e65c00;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+            font-size: 1.2em;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 3em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav a {
+                margin-left: 15px;
+            }
+
+            .hero h1 {
+                font-size: 2em;
+            }
+
+            .hero p {
+                font-size: 1em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <div class="header">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Hotel Logo"> <!-- Replace with actual logo URL -->
+            </a>
+        </div>
+        <!-- Navigation Bar -->
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rooms.html">Accommodation</a>
+            <a href="services.html">Facilities & Services</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div>
+            <h1>Welcome to Premier Suites Lodges</h1>
+            <p>Experience the finest comfort and hospitality</p>
+            <a href="rooms.html" class="btn">Explore Our Rooms</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Premier Suites Lodges. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
