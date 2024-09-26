@@ -13,19 +13,33 @@
             color: #333;
         }
 
-        /* Navigation Bar */
-        nav {
+        /* Header and Navigation Bar */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #4A90E2;
-            overflow: hidden;
             padding: 20px 50px;
             position: sticky;
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease; /* Smooth hide effect */
+        }
+
+        /* Logo */
+        .logo img {
+            height: 50px;
+            width: auto; /* Maintains aspect ratio */
+        }
+
+        /* Navigation Links */
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
-            float: right;
             display: block;
             color: white;
             text-align: center;
@@ -41,6 +55,49 @@
             color: black;
             border-radius: 4px;
             transition: background 0.3s ease;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: 0.4s;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                background-color: #4A90E2;
+                width: 100%;
+                position: absolute;
+                top: 70px; /* Below the header */
+                left: 0;
+                z-index: 1;
+            }
+
+            nav a {
+                padding: 15px;
+                text-align: center;
+                border-top: 1px solid #ddd;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Toggle the menu */
+        .nav-active {
+            display: flex !important;
         }
 
         /* About Section */
@@ -59,7 +116,6 @@
             text-align: center;
         }
 
-        /* Overlay for better text readability */
         .about-section::before {
             content: '';
             position: absolute;
@@ -168,15 +224,29 @@
     </style>
 </head>
 <body>
-    <nav>
-        <a href="contact.html">Contact Us</a>
-        <a href="services.html">Facilities & Services</a>
-        <a href="rooms.html">Accommodation</a>
-        <a href="about.html">About Us</a>
-        <a href="index.html">Home</a> 
-        
-    </nav>
-</div>
+    <!-- Header with Logo and Navigation -->
+    <div class="header" id="header">
+        <div class="logo">
+            <a href="index.html">
+                <img src="logo.jpg" alt="Hotel Logo"> <!-- Replace with actual logo URL -->
+            </a>
+        </div>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <nav id="navMenu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="rooms.html">Accommodation</a>
+            <a href="services.html">Facilities & Services</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
+
     <!-- About Section -->
     <div class="about-section">
         <h1>About Our Lodge</h1>
@@ -212,5 +282,26 @@
         <p>&copy; 2024 Premier Suites Lodges. All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle and Header Hide on Scroll -->
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("nav-active");
+        }
+
+        // Hide/show header when scrolling
+        let lastScrollTop = 0;
+        const header = document.getElementById("header");
+
+        window.addEventListener("scroll", function() {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop) {
+                header.style.top = "-80px"; // Hide when scrolling down
+            } else {
+                header.style.top = "0"; // Show when scrolling up
+            }
+            lastScrollTop = scrollTop;
+        });
+    </script>
 </body>
 </html>
