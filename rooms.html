@@ -294,88 +294,102 @@
         </nav>
     </div>
 
-    <!-- Rooms Section -->
-    <div class="rooms">
-        <h1>Our Rooms</h1>
-        <div class="room-types">
-            <!-- Room 1: Deluxe Suite -->
-            <div class="room">
-                <h2>Deluxe Suite</h2>
-                <div><h1>$50</h1></div>
-                <div class="slideshow-container">
-                    <img src="dx1.jpg" class="mySlides">
-                    <img src="dx2.jpg" class="mySlides">
-                    <img src="dx3.jpg" class="mySlides">
-                </div>
-                
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'deluxe')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'deluxe')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'deluxe')"></span> 
-                </div>
-                <p>Enjoy the luxury of our deluxe suite with stunning views, king-sized bed, and a private balcony offering the following services:</p>
-                <ul>
-                    <li>Luxurious bed and linen</li>
-                    <li>Air Conditioner</li>
-                    <li>DSTV with all channels</li>
-                    <li>Side bed fridge</li>
-                    <li>Coffee maker</li>
-                    <li>Free breakfast</li>
-                    <li>Dressing Gowns and towels</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
+<!-- Rooms Section -->
+<div class="rooms">
+    <h1>Our Rooms</h1>
+    <div class="room-types">
+
+        <!-- Room 1: Deluxe Suite -->
+        <div class="room">
+            <h2>Deluxe Suite</h2>
+            <div><h1>$50</h1></div>
+            <div class="slideshow-container" id="deluxe">
+                <img src="dx1.jpg" class="mySlides deluxe" style="display: block;">
+                <img src="dx2.jpg" class="mySlides deluxe" style="display: none;">
+                <img src="dx3.jpg" class="mySlides deluxe" style="display: none;">
             </div>
 
-            <!-- Room 2: Standard Room -->
-            <div class="room">
-                <h2>Standard Room</h2>
-                <div><h1>$30</h1></div>
-                <div class="slideshow-container">
-                    <img src="std3.jpg" class="mySlides">
-                    <img src="std1.jpg" class="mySlides">
-                    <img src="std2.jpg" class="mySlides">
-                </div>
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'standard')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'standard')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'standard')"></span> 
-                </div>
-                <p>A comfortable and cozy room perfect for business or leisure with all essential amenities offering the following services:</p>
-                <ul>
-                    <li>Luxurious bed and linen</li>
-                    <li>Wi-Fi</li>
-                    <li>Solar Backup</li>
-                    <li>Mirrors</li>
-                    <li>Air fresheners</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1, 'deluxe')"></span> 
+                <span class="dot" onclick="currentSlide(2, 'deluxe')"></span> 
+                <span class="dot" onclick="currentSlide(3, 'deluxe')"></span> 
             </div>
-
-            <!-- Room 3: Family Room -->
-            <div class="room">
-                <h2>Spa</h2>
-                <div><h1>$45</h1></div>
-                <div class="slideshow-container">
-                    <img src="spa.jpg" class="mySlides">
-                    <img src="spa3.jpg" class="mySlides">
-                    <img src="spa4.jpg" class="mySlides">
-                </div>
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'family')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'family')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'family')"></span> 
-                </div>
-                <p>Discover a sanctuary of relaxation and rejuvenation at our spa with a range of luxurious treatments designed to refresh your body and soul:</p>
-                <ul>
-                    <li>Facial Massage - $15</li>
-                    <li>Foot Massage - $15</li>
-                    <li>Back Massage - $15</li>
-                    <li>Full Body Massage - $45</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20spa%20services%20at%20your%20Lodge" class="btn">Book Now</a>
-            </div>
+            <p>Enjoy the luxury of our deluxe suite with stunning views, king-sized bed, and a private balcony offering the following services:</p>
+            <ul>
+                <li>Luxurious bed and linen</li>
+                <li>Air Conditioner</li>
+                <li>DSTV with all channels</li>
+                <li>Side bed fridge</li>
+                <li>Coffee maker</li>
+                <li>Free breakfast</li>
+                <li>Dressing Gowns and towels</li>
+            </ul>
+            <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
         </div>
+
+        <!-- Room 2: Standard Room -->
+        <div class="room">
+            <h2>Standard Room</h2>
+            <div><h1>$30</h1></div>
+            <div class="slideshow-container" id="standard">
+                <img src="std3.jpg" class="mySlides standard" style="display: block;">
+                <img src="std1.jpg" class="mySlides standard" style="display: none;">
+                <img src="std2.jpg" class="mySlides standard" style="display: none;">
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1, 'standard')"></span> 
+                <span class="dot" onclick="currentSlide(2, 'standard')"></span> 
+                <span class="dot" onclick="currentSlide(3, 'standard')"></span> 
+            </div>
+            <p>A comfortable and cozy room perfect for business or leisure with all essential amenities offering the following services:</p>
+            <ul>
+                <li>Luxurious bed and linen</li>
+                <li>Wi-Fi</li>
+                <li>Solar Backup</li>
+                <li>Mirrors</li>
+                <li>Air fresheners</li>
+            </ul>
+            <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
+        </div>
+
+        <!-- Room 3: Spa -->
+        <div class="room">
+            <h2>Spa</h2>
+            <div><h1>$45</h1></div>
+            <div class="slideshow-container" id="spa">
+                <img src="spa.jpg" class="mySlides spa" style="display: block;">
+                <img src="spa3.jpg" class="mySlides spa" style="display: none;">
+                <img src="spa4.jpg" class="mySlides spa" style="display: none;">
+            </div>
+            <div class="dots">
+                <span class="dot" onclick="currentSlide(1, 'spa')"></span> 
+                <span class="dot" onclick="currentSlide(2, 'spa')"></span> 
+                <span class="dot" onclick="currentSlide(3, 'spa')"></span> 
+            </div>
+            <p>Discover a sanctuary of relaxation and rejuvenation at our spa with a range of luxurious treatments designed to refresh your body and soul:</p>
+            <ul>
+                <li>Facial Massage - $15</li>
+                <li>Foot Massage - $15</li>
+                <li>Back Massage - $15</li>
+                <li>Full Body Massage - $45</li>
+            </ul>
+            <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20spa%20services%20at%20your%20Lodge" class="btn">Book Now</a>
+        </div>
+
     </div>
+</div>
+
+<!-- JavaScript for Slideshow -->
+<script>
+function currentSlide(n, roomType) {
+    let slides = document.getElementsByClassName(roomType);
+    for (let i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slides[n - 1].style.display = "block";
+}
+</script>
+
 
     <!-- Footer -->
     <footer>
