@@ -184,6 +184,46 @@
             font-size: 1.8em;
         }
 
+    .team-member {
+        text-align: center; /* Center the content horizontally */
+        background-color: white;
+        padding: 20px;
+        width: 30%;
+        box-sizing: border-box;
+        margin: 20px auto; /* Center each team member box */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .team-member img {
+        width: 150px; /* You can adjust the size if needed */
+        height: 150px;
+        border-radius: 50%;
+        display: block;
+        margin: 0 auto; /* Center the image horizontally */
+    }
+
+    .team-member h3 {
+        margin-top: 20px;
+        font-size: 1.8em;
+    }
+
+    .team-member p {
+        font-size: 1.2em;
+        color: #666;
+    }
+
+    .team-member:hover {
+        transform: scale(1.05);
+    }
+
+    .team {
+        display: flex;
+        justify-content: center; /* Center the entire team container */
+        flex-wrap: wrap;
+    }
+
+
         .team-member p {
             font-size: 1.2em;
             color: #666;
