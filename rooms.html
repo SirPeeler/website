@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rooms | Hotel</title>
+    <title>Navigation Bar Example</title>
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
-        /* Global Styles */
+        /* Global styles */
         body, html {
             margin: 0;
             padding: 0;
@@ -23,10 +23,20 @@
             background-color: #4A90E2;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 10px 0;
         }
 
-        nav a {
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
             float: left;
+        }
+
+        nav ul li a {
             display: block;
             color: white;
             text-align: center;
@@ -36,171 +46,30 @@
             font-weight: 600;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
+            background-color: #3582D8;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a.active {
             background-color: #3582D8;
         }
 
-        /* Rooms Section */
-        .rooms {
-            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('tii.jpg');
-            background-size: cover;
-            background-position: center;
-            min-height: 100vh;
-            padding: 50px;
-            color: white;
-            text-align: center;
+        /* Clear floats after the columns */
+        nav::after {
+            content: "";
+            display: table;
+            clear: both;
         }
 
-        .rooms h1 {
-            font-size: 3em;
-            margin-bottom: 40px;
-            text-shadow: 2px 2px 5px #000;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .room-types {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .room {
-            background-color: rgba(255, 255, 255, 0.9);
-            padding: 20px;
-            margin: 15px;
-            width: 30%;
-            border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-            transition: transform 0.3s ease-in-out;
-            color: #333;
-        }
-
-        .room:hover {
-            transform: translateY(-10px);
-        }
-
-        .room h2 {
-            font-size: 2em;
-            margin-bottom: 20px;
-            font-family: 'Montserrat', sans-serif;
-            color: #4A90E2;
-        }
-
-        .room p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        /* Call to Action Button */
-        .room .btn {
-            display: inline-block;
-            padding: 10px 20px;
-            background-color: #4A90E2;
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
-
-        .room .btn:hover {
-            background-color: #3582D8;
-        }
-
-        /* Custom list styling */
-        ul {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 15px;
-            border-radius: 8px;
-            list-style: none;
-            margin: 20px 0;
-        }
-
-        ul li {
-            margin-bottom: 10px;
-            padding-left: 30px;
-            position: relative;
-            font-size: 1.1em;
-        }
-
-        ul li:before {
-            content: "\2713"; /* Checkmark for the list items */
-            color: #4A90E2;
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        /* Slideshow Container */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
-            height: 200px;
-            margin: auto;
-            overflow: hidden;
-            border-radius: 5px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-
-        .slideshow-container img {
-            width: 100%;
-            height: 100%;
-            display: none;
-            object-fit: cover;
-        }
-
-        .active-slide {
-            display: block;
-        }
-
-        /* Navigation Dots */
-        .dots {
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 5px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            cursor: pointer;
-        }
-
-        .dot.active {
-            background-color: #4A90E2;
-        }
-
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #333;
-            color: white;
-            margin-top: 40px;
-        }
-
-        footer p {
-            font-size: 14px;
-        }
-
-        footer i {
-            margin: 0 10px;
-            font-size: 18px;
-        }
-
-        @media (max-width: 1024px) {
-            .room {
-                width: 45%;
-            }
-        }
-
+        /* Responsive Navigation Bar */
         @media (max-width: 768px) {
-            .room {
-                width: 100%;
+            nav ul {
+                float: none;
+                text-align: center;
+            }
+            nav ul li {
+                display: inline-block;
             }
         }
     </style>
@@ -209,165 +78,14 @@
 
     <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="rooms.html">Accommodation</a>
-        <a href="services.html">Facilities & Services</a>
-        <a href="contact.html">Contact Us</a>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="rooms.html">Rooms</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
     </nav>
-
-    <!-- Rooms Section -->
-    <div class="rooms">
-        <h1>Our Rooms</h1>
-        <div class="room-types">
-            <!-- Room 1: Deluxe Suite -->
-            <div class="room">
-                <h2>Deluxe Suite</h2>
-                <div><h1>$50</h1></div>
-                <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0070.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0069.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0031.jpg" class="mySlides">
-                </div>
-                
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'deluxe')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'deluxe')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'deluxe')"></span> 
-                </div>
-                <p>Enjoy the luxury of our deluxe suite with stunning views, king-sized bed, and a private balcony offering the following services:</p>
-                <ul>
-                    <li>Luxurious bed and linen</li>
-                    <li>Air Conditioner</li>
-                    <li>DSTV with all channels</li>
-                    <li>Side bed fridge</li>
-                    <li>Coffee maker</li>
-                    <li>Free breakfast</li>
-                    <li>Dressing Gowns and towels</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
-            </div>
-
-            <!-- Room 2: Standard Room -->
-            <div class="room">
-                <h2>Standard Room</h2>
-                <div><h1>$30</h1></div>
-                <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0090.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0089.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0083.jpg" class="mySlides">
-                </div>
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'standard')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'standard')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'standard')"></span> 
-                </div>
-                <p>A comfortable and cozy room perfect for business or leisure with all essential amenities offering the following services:</p>
-                <ul>
-                    <li>Luxurious bed and linen</li>
-                    <li>Wi-Fi</li>
-                    <li>Solar Backup</li>
-                    <li>Mirrors</li>
-                    <li>Air fresheners</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
-            </div>
-
-            <!-- Room 3: Family Room -->
-            <div class="room">
-                <h2>Spa</h2>
-                <div><h1>$45</h1></div>
-                <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0034.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0033.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0035.jpg" class="mySlides">
-                </div>
-                <div class="dots">
-                    <span class="dot" onclick="currentSlide(1, 'family')"></span> 
-                    <span class="dot" onclick="currentSlide(2, 'family')"></span> 
-                    <span class="dot" onclick="currentSlide(3, 'family')"></span> 
-                </div>
-                <p>Discover a sanctuary of relaxation and rejuvenation at our spa with a range of luxurious treatments designed to refresh your body and soul:</p>
-                <ul>
-                    <li>Facial Massage - $15</li>
-                    <li>Foot Massage - $15</li>
-                    <li>Back Massage - $15</li>
-                    <li>Full Body Massage - $45</li>
-                </ul>
-                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Premier Suites Lodges. All Rights Reserved.</p>
-    </footer>
-
-    <!-- JavaScript for Slideshow -->
-    <script>
-        const currentSlideIndex = {
-            'deluxe': 1,
-            'standard': 1,
-            'family': 1
-        };
-
-        function showSlides(roomType) {
-            const slides = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .mySlides`);
-            const dots = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .dot`);
-            const index = currentSlideIndex[roomType];
-
-            slides.forEach(slide => {
-                slide.style.display = "none";
-            });
-
-            dots.forEach(dot => {
-                dot.classList.remove("active");
-            });
-
-            if(slides.length > 0) {
-                slides[index-1].style.display = "block";
-                if(dots.length >= index) {
-                    dots[index-1].classList.add("active");
-                }
-            }
-        }
-
-        function getRoomIndex(roomType) {
-            switch(roomType) {
-                case 'deluxe':
-                    return 1;
-                case 'standard':
-                    return 2;
-                case 'family':
-                    return 3;
-                default:
-                    return 1;
-            }
-        }
-
-        function currentSlide(n, roomType) {
-            currentSlideIndex[roomType] = n;
-            showSlides(roomType);
-        }
-
-        function initializeSlides() {
-            const rooms = ['deluxe', 'standard', 'family'];
-            rooms.forEach(roomType => {
-                showSlides(roomType);
-                setInterval(() => {
-                    currentSlideIndex[roomType]++;
-                    const totalSlides = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .mySlides`).length;
-                    if(currentSlideIndex[roomType] > totalSlides) {
-                        currentSlideIndex[roomType] = 1;
-                    }
-                    showSlides(roomType);
-                }, 3000);
-            });
-        }
-
-        window.onload = initializeSlides;
-    </script>
 
 </body>
 </html>
