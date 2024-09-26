@@ -255,27 +255,59 @@
         <p>Come experience the warmth and elegance of Premier Suites. Get ready to indulge in the luxury of Premier Suites Lodges.</p>
     </div>
 
-    <!-- Team Section -->
-    <div class="team-section">
-        <h2>Meet Our Team</h2>
-        <div class="team">
-            <div class="team-member">
-                <img src="manager.jpg" alt="Manager Photo"> <!-- Replace with actual image URL -->
-                <h3>John Doe</h3>
-                <p>General Manager</p>
-            </div>
-            <div class="team-member">
-                <img src="chef.jpg" alt="Chef Photo"> <!-- Replace with actual image URL -->
-                <h3>Jane Smith</h3>
-                <p>Executive Chef</p>
-            </div>
-            <div class="team-member">
-                <img src="concierge.jpg" alt="Concierge Photo"> <!-- Replace with actual image URL -->
-                <h3>Michael Brown</h3>
-                <p>Chief Concierge</p>
-            </div>
+<style>
+    .team-member {
+        display: none;
+    }
+</style>
+
+<!-- Team Section -->
+<div class="team-section">
+    <h2>Meet Our Team</h2>
+    <div class="team">
+        <div class="team-member">
+            <img src="manager.jpg" alt="Manager Photo"> <!-- Replace with actual image URL -->
+            <h3>John Doe</h3>
+            <p>General Manager</p>
+        </div>
+        <div class="team-member">
+            <img src="chef.jpg" alt="Chef Photo"> <!-- Replace with actual image URL -->
+            <h3>Jane Smith</h3>
+            <p>Executive Chef</p>
+        </div>
+        <div class="team-member">
+            <img src="concierge.jpg" alt="Concierge Photo"> <!-- Replace with actual image URL -->
+            <h3>Michael Brown</h3>
+            <p>Chief Concierge</p>
         </div>
     </div>
+</div>
+
+<script>
+    let currentMember = 0;
+    const teamMembers = document.querySelectorAll('.team-member');
+
+    function showMember(index) {
+        teamMembers.forEach((member, i) => {
+            if (i === index) {
+                member.style.display = 'block';
+            } else {
+                member.style.display = 'none';
+            }
+        });
+    }
+
+    function nextMember() {
+        currentMember = (currentMember + 1) % teamMembers.length;
+        showMember(currentMember);
+    }
+
+    // Display the first member initially
+    showMember(currentMember);
+
+    // Automatically show the next member every 3 seconds
+    setInterval(nextMember, 3000);
+</script>
 
     <!-- Footer -->
     <footer>
