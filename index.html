@@ -30,6 +30,7 @@
         /* Logo */
         .logo img {
             height: 50px;
+            width: auto; /* Keeps the aspect ratio */
         }
 
         /* Navigation Bar */
@@ -127,19 +128,47 @@
             margin: 0;
         }
 
+        /* Responsive Design - Media Queries */
+
+        /* For tablets and smaller screens */
         @media (max-width: 768px) {
+            .header {
+                padding: 10px 20px;
+            }
+
             .hero h1 {
-                font-size: 3em;
+                font-size: 2.5em;
             }
 
             .hero p {
                 font-size: 1.2em;
             }
+
+            nav a {
+                margin-left: 10px;
+                font-size: 14px;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 1em;
+            }
         }
 
+        /* For mobile screens (max-width: 480px) */
         @media (max-width: 480px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
             nav a {
-                margin-left: 15px;
+                display: block;
+                margin: 10px 0;
+            }
+
+            .hero {
+                height: 80vh;
             }
 
             .hero h1 {
@@ -149,7 +178,17 @@
             .hero p {
                 font-size: 1em;
             }
+
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+
+            footer {
+                font-size: 1em;
+            }
         }
+
     </style>
 </head>
 <body>
