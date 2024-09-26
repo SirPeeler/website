@@ -16,92 +16,28 @@
             font-family: 'Open Sans', sans-serif;
             background-color: #f4f4f4;
             color: #333;
-            scroll-behavior: smooth;
-        }
-
-        /* Header with Logo and Navigation Bar */
-        .header {
-            background-color: #4A90E2;
-            padding: 20px 50px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Logo */
-        .logo img {
-            height: 50px;
-            width: auto; /* Keeps the aspect ratio */
         }
 
         /* Navigation Bar */
         nav {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
+            background-color: #4A90E2;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         nav a {
+            float: left;
+            display: block;
             color: white;
             text-align: center;
             padding: 14px 20px;
             text-decoration: none;
-            font-weight: bold;
-            text-transform: uppercase;
+            font-size: 18px;
+            font-weight: 600;
         }
 
         nav a:hover {
-            background-color: #ddd;
-            color: #4A90E2;
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-
-        /* Hamburger Menu */
-        .menu-icon {
-            display: none;
-            cursor: pointer;
-        }
-
-        .menu-icon div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 5px;
-            transition: 0.4s;
-        }
-
-        /* Mobile Styles */
-        @media (max-width: 768px) {
-            nav {
-                display: none; /* Hide navigation by default on mobile */
-                flex-direction: column;
-                background-color: #4A90E2;
-                width: 100%;
-                position: absolute;
-                top: 70px; /* Below the header */
-                left: 0;
-                z-index: 1;
-            }
-
-            nav a {
-                padding: 15px;
-                text-align: center;
-                border-top: 1px solid #ddd;
-            }
-
-            .menu-icon {
-                display: block;
-            }
-        }
-
-        /* Toggle the menu */
-        .nav-active {
-            display: flex !important;
+            background-color: #3582D8;
         }
 
         /* Rooms Section */
@@ -271,30 +207,14 @@
 </head>
 <body>
 
-    <!-- Header -->
-    <div class="header">
-        <!-- Logo -->
-        <div class="logo">
-            <a href="index.html">
-                <img src="logo.jpg" alt="Hotel Logo"> <!-- Replace with actual logo URL -->
-            </a>
-        </div>
-
-        <!-- Hamburger Menu Icon -->
-        <div class="menu-icon" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-
-        <nav id="navMenu">
-            <a href="index.html">Home</a>
-            <a href="about.html">About Us</a>
-            <a href="rooms.html">Accommodation</a>
-            <a href="services.html">Facilities & Services</a>
-            <a href="contact.html">Contact Us</a>
-        </nav>
-    </div>
+    <!-- Navigation Bar -->
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="rooms.html">Accommodation</a>
+        <a href="services.html">Facilities & Services</a>
+        <a href="contact.html">Contact Us</a>
+    </nav>
 
     <!-- Rooms Section -->
     <div class="rooms">
@@ -305,50 +225,149 @@
                 <h2>Deluxe Suite</h2>
                 <div><h1>$50</h1></div>
                 <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0070.jpg" class="active-slide">
+                    <img src="IMG-20240924-WA0070.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0069.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0031.jpg" class="mySlides">
                 </div>
-                <p>Our deluxe suites provide a spacious living area and modern decor for a luxurious stay.</p>
-                <a href="#" class="btn">Book Now</a>
+                
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1, 'deluxe')"></span> 
+                    <span class="dot" onclick="currentSlide(2, 'deluxe')"></span> 
+                    <span class="dot" onclick="currentSlide(3, 'deluxe')"></span> 
+                </div>
+                <p>Enjoy the luxury of our deluxe suite with stunning views, king-sized bed, and a private balcony offering the following services:</p>
+                <ul>
+                    <li>Luxurious bed and linen</li>
+                    <li>Air Conditioner</li>
+                    <li>DSTV with all channels</li>
+                    <li>Side bed fridge</li>
+                    <li>Coffee maker</li>
+                    <li>Free breakfast</li>
+                    <li>Dressing Gowns and towels</li>
+                </ul>
+                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
             </div>
 
-            <!-- Room 2: Executive Suite -->
+            <!-- Room 2: Standard Room -->
             <div class="room">
-                <h2>Executive Suite</h2>
-                <div><h1>$70</h1></div>
+                <h2>Standard Room</h2>
+                <div><h1>$30</h1></div>
                 <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0071.jpg" class="active-slide">
+                    <img src="IMG-20240924-WA0090.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0089.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0083.jpg" class="mySlides">
                 </div>
-                <p>The Executive suite combines elegance and functionality for business and leisure travelers.</p>
-                <a href="#" class="btn">Book Now</a>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1, 'standard')"></span> 
+                    <span class="dot" onclick="currentSlide(2, 'standard')"></span> 
+                    <span class="dot" onclick="currentSlide(3, 'standard')"></span> 
+                </div>
+                <p>A comfortable and cozy room perfect for business or leisure with all essential amenities offering the following services:</p>
+                <ul>
+                    <li>Luxurious bed and linen</li>
+                    <li>Wi-Fi</li>
+                    <li>Solar Backup</li>
+                    <li>Mirrors</li>
+                    <li>Air fresheners</li>
+                </ul>
+                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
             </div>
 
-            <!-- Room 3: Presidential Suite -->
+            <!-- Room 3: Family Room -->
             <div class="room">
-                <h2>Presidential Suite</h2>
-                <div><h1>$100</h1></div>
+                <h2>Spa</h2>
+                <div><h1>$45</h1></div>
                 <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0072.jpg" class="active-slide">
+                    <img src="IMG-20240924-WA0034.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0033.jpg" class="mySlides">
+                    <img src="IMG-20240924-WA0035.jpg" class="mySlides">
                 </div>
-                <p>The Presidential suite offers the highest level of luxury, with exclusive amenities and services.</p>
-                <a href="#" class="btn">Book Now</a>
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide(1, 'family')"></span> 
+                    <span class="dot" onclick="currentSlide(2, 'family')"></span> 
+                    <span class="dot" onclick="currentSlide(3, 'family')"></span> 
+                </div>
+                <p>Discover a sanctuary of relaxation and rejuvenation at our spa with a range of luxurious treatments designed to refresh your body and soul:</p>
+                <ul>
+                    <li>Facial Massage - $15</li>
+                    <li>Foot Massage - $15</li>
+                    <li>Back Massage - $15</li>
+                    <li>Full Body Massage - $45</li>
+                </ul>
+                <a href="https://wa.me/263787270236?text=Hello!%20I%20would%20like%20to%20book%20a%20room%20at%20your%20Lodge" class="btn">Book Now</a>
             </div>
         </div>
     </div>
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Hotel. All Rights Reserved.</p>
-        <p>Follow us on:</p>
-        <i class="fa fa-facebook"></i>
-        <i class="fa fa-twitter"></i>
-        <i class="fa fa-instagram"></i>
+        <p>&copy; 2024 Premier Suites Lodges. All Rights Reserved.</p>
     </footer>
 
-    <!-- Script to toggle menu -->
+    <!-- JavaScript for Slideshow -->
     <script>
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('nav-active');
+        const currentSlideIndex = {
+            'deluxe': 1,
+            'standard': 1,
+            'family': 1
+        };
+
+        function showSlides(roomType) {
+            const slides = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .mySlides`);
+            const dots = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .dot`);
+            const index = currentSlideIndex[roomType];
+
+            slides.forEach(slide => {
+                slide.style.display = "none";
+            });
+
+            dots.forEach(dot => {
+                dot.classList.remove("active");
+            });
+
+            if(slides.length > 0) {
+                slides[index-1].style.display = "block";
+                if(dots.length >= index) {
+                    dots[index-1].classList.add("active");
+                }
+            }
         }
+
+        function getRoomIndex(roomType) {
+            switch(roomType) {
+                case 'deluxe':
+                    return 1;
+                case 'standard':
+                    return 2;
+                case 'family':
+                    return 3;
+                default:
+                    return 1;
+            }
+        }
+
+        function currentSlide(n, roomType) {
+            currentSlideIndex[roomType] = n;
+            showSlides(roomType);
+        }
+
+        function initializeSlides() {
+            const rooms = ['deluxe', 'standard', 'family'];
+            rooms.forEach(roomType => {
+                showSlides(roomType);
+                setInterval(() => {
+                    currentSlideIndex[roomType]++;
+                    const totalSlides = document.querySelectorAll(`.room:nth-child(${getRoomIndex(roomType)}) .mySlides`).length;
+                    if(currentSlideIndex[roomType] > totalSlides) {
+                        currentSlideIndex[roomType] = 1;
+                    }
+                    showSlides(roomType);
+                }, 3000);
+            });
+        }
+
+        window.onload = initializeSlides;
     </script>
+
 </body>
 </html>
