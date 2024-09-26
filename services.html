@@ -14,18 +14,34 @@
             background-color: #f4f4f4;
         }
 
-        /* Navigation Bar */
-        nav {
+            /* Header and Navigation Bar */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
             background-color: #4A90E2;
-            text-align: right;
             padding: 20px 50px;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: top 0.3s ease; /* Smooth hide effect */
+        }
+
+        /* Logo */
+        .logo img {
+            height: 50px;
+            width: auto; /* Maintains aspect ratio */
+        }
+
+        /* Navigation Links */
+        nav {
+            display: flex;
+            align-items: center;
         }
 
         nav a {
+            display: block;
             color: white;
             text-align: center;
             padding: 14px 20px;
@@ -37,9 +53,52 @@
 
         nav a:hover {
             background-color: #ddd;
-            color: #4A90E2;
+            color: black;
             border-radius: 4px;
             transition: background 0.3s ease;
+        }
+
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: 0.4s;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
+            nav {
+                display: none; /* Hidden by default */
+                flex-direction: column;
+                background-color: #4A90E2;
+                width: 100%;
+                position: absolute;
+                top: 70px; /* Below the header */
+                left: 0;
+                z-index: 1;
+            }
+
+            nav a {
+                padding: 15px;
+                text-align: center;
+                border-top: 1px solid #ddd;
+            }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Toggle the menu */
+        .nav-active {
+            display: flex !important;
         }
 
         /* Facilities Section */
