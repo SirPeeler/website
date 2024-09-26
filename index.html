@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +38,6 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap; /* Allows wrapping if needed */
         }
 
         nav a {
@@ -55,16 +56,47 @@
             transition: background 0.3s ease;
         }
 
-        /* Responsive adjustments for mobile devices */
-        @media (max-width: 480px) {
+        /* Hamburger Menu */
+        .menu-icon {
+            display: none;
+            cursor: pointer;
+        }
+
+        .menu-icon div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+            transition: 0.4s;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 768px) {
             nav {
-                justify-content: space-between;  /* Ensure even spacing */
+                display: none; /* Hide navigation by default on mobile */
+                flex-direction: column;
+                background-color: #4A90E2;
+                width: 100%;
+                position: absolute;
+                top: 70px; /* Below the header */
+                left: 0;
+                z-index: 1;
             }
 
             nav a {
-                font-size: 14px;  /* Smaller font size */
-                padding: 10px 15px;  /* Adjust padding for smaller screens */
+                padding: 15px;
+                text-align: center;
+                border-top: 1px solid #ddd;
             }
+
+            .menu-icon {
+                display: block;
+            }
+        }
+
+        /* Toggle the menu */
+        .nav-active {
+            display: flex !important;
         }
 
         /* Hero Section with Background Image */
@@ -153,18 +185,9 @@
             .hero p {
                 font-size: 1.2em;
             }
-
-            nav a {
-                font-size: 16px;
-            }
         }
 
         @media (max-width: 480px) {
-            .header {
-                flex-direction: column;
-                text-align: center;
-            }
-
             .hero {
                 height: 80vh;
             }
@@ -199,8 +222,14 @@
                 <img src="logo.jpg" alt="Hotel Logo"> <!-- Replace with actual logo URL -->
             </a>
         </div>
+        <!-- Hamburger Menu Icon -->
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <!-- Navigation Bar -->
-        <nav>
+        <nav id="navMenu">
             <a href="index.html">Home</a>
             <a href="about.html">About Us</a>
             <a href="rooms.html">Accommodation</a>
@@ -223,5 +252,12 @@
         <p>&copy; 2024 Premier Suites Lodges. All Rights Reserved.</p>
     </footer>
 
+    <!-- JavaScript for Mobile Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            var navMenu = document.getElementById("navMenu");
+            navMenu.classList.toggle("nav-active");
+        }
+    </script>
 </body>
 </html>
