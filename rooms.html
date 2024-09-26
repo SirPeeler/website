@@ -330,9 +330,9 @@
                 <h2>Standard Room</h2>
                 <div><h1>$30</h1></div>
                 <div class="slideshow-container">
-                    <img src="IMG-20240924-WA0090.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0089.jpg" class="mySlides">
-                    <img src="IMG-20240924-WA0083.jpg" class="mySlides">
+                    <img src="dx1.jpg" class="mySlides">
+                    <img src="dx2.jpg" class="mySlides">
+                    <img src="dx3.jpg" class="mySlides">
                 </div>
                 <div class="dots">
                     <span class="dot" onclick="currentSlide(1, 'standard')"></span> 
@@ -445,6 +445,28 @@
 
         window.onload = initializeSlides;
     </script>
+    <!-- JavaScript for Mobile Menu Toggle and Header Hide on Scroll -->
+<script>
+    function toggleMenu() {
+        var navMenu = document.getElementById("navMenu");
+        navMenu.classList.toggle("nav-active");
+    }
 
+    // Hide/show header when scrolling
+    let lastScrollTop = 0;
+    const header = document.getElementById("header");
+    const navMenu = document.getElementById("navMenu");
+
+    window.addEventListener("scroll", function() {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+            header.style.top = "-80px"; // Hide header when scrolling down
+            navMenu.classList.remove("nav-active"); // Close nav menu when scrolling down
+        } else {
+            header.style.top = "0"; // Show header when scrolling up
+        }
+        lastScrollTop = scrollTop;
+    });
+</script>
 </body>
 </html>
