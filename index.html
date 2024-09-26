@@ -36,7 +36,7 @@
             display: flex;
             justify-content: space-around;
             align-items: center;
-            flex-wrap: wrap; /* Allows wrapping on small screens */
+            flex-wrap: wrap; /* Allows wrapping if needed */
         }
 
         nav a {
@@ -55,15 +55,15 @@
             transition: background 0.3s ease;
         }
 
-        /* Responsive for mobile devices */
+        /* Responsive adjustments for mobile devices */
         @media (max-width: 480px) {
             nav {
-                flex-direction: column;  /* Stack links vertically */
+                justify-content: space-between;  /* Ensure even spacing */
             }
 
             nav a {
-                margin: 10px 0;  /* Add margin between links when vertical */
-                font-size: 16px; /* Smaller font size for better fit */
+                font-size: 14px;  /* Smaller font size */
+                padding: 10px 15px;  /* Adjust padding for smaller screens */
             }
         }
 
